@@ -8,13 +8,17 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
-@RequestMapping("/notice/*")
-public class NoticeController {
+@RequestMapping("/member/*")
+public class MemberController {
 	
-	@GetMapping("/get")
-	public void get() {
-		log.info("/get .... ");
+	@GetMapping("/login")
+	public void login() {
+		log.info("/login ..... ");
 	}
 	
-	
+	@GetMapping("/join")
+	public void join() {
+		log.info("/join ...... ");
+	}
+			
 }

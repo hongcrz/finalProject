@@ -38,39 +38,38 @@
 		            <div class="sidebar-box ftco-animate">
 						<div class="categories">
 			                <h3>Notice List</h3>
-			                <ul style="padding-left: 0px;">
-				                <li><a href="#" style="color: #009223;">
-				                		<img alt="" src="/resources/image/ETC_icon/icon_notice.png" style="width:15px; height:15px;">
+			                <ul id="notice-ul">
+				                <li><a href="#" class="fixed-list">
+				                		<img alt="" src="/resources/image/ETC_icon/icon_notice.png">
 				                		Fixed content A 
 				                	</a></li>
-				                <li><a href="#" style="color: #009223;">
-				                		<img alt="" src="/resources/image/ETC_icon/icon_notice.png" style="width:15px; height:15px;">
+				                <li><a href="#" class="fixed-list">
+				                		<img alt="" src="/resources/image/ETC_icon/icon_notice.png">
 				                		Fixed content B 
 				                	</a></li>
-				                <li><a href="#" style="color: #009223;">
-				                		<img alt="" src="/resources/image/ETC_icon/icon_notice.png" style="width:15px; height:15px;">
+				                <li><a href="#" class="fixed-list">
+				                		<img alt="" src="/resources/image/ETC_icon/icon_notice.png">
 				                		Fixed content C 
 				                	</a></li>
-				                <li><a href="#" style="color: #009223;">
-				                		<img alt="" src="/resources/image/ETC_icon/icon_notice.png" style="width:15px; height:15px;">
+				                <li><a href="#" class="fixed-list">
+				                		<img alt="" src="/resources/image/ETC_icon/icon_notice.png">
 				                		Fixed content D 
 				                	</a></li>
-				                <li><a href="#" style="color: #999;">
+				                <li><a href="#" class="updown-list">
 				                		next content
-				                		<span><img alt="" src="/resources/image/ETC_icon/icon_arrow_up.png" style="width:15px; height:15px;"></span>
+				                		<span><img alt="" src="/resources/image/ETC_icon/icon_arrow_up.png"></span>
 				                	</a></li>
 				                <li><a href="#">
 				                		this content
-				                		<span><img alt="" src="/resources/image/ETC_icon/icon_arrow_right.png" style="width:15px; height:15px; transform: scaleX(-1);"></span>
+				                		<span><img alt="" src="/resources/image/ETC_icon/icon_arrow_right.png" style="transform: scaleX(-1);"></span>
 				                	</a></li>
-				                <li><a href="#" style="color: #999;">
+				                <li><a href="#" class="updown-list">
 				                		prev content
-				                		<span><img alt="" src="/resources/image/ETC_icon/icon_arrow_down.png" style="width:15px; height:15px;"></span>
+				                		<span><img alt="" src="/resources/image/ETC_icon/icon_arrow_down.png"></span>
 				                	</a></li>
 							</ul>
 						</div>
 		            </div>
-
             	</div> <!-- .col-lg-4 End -->
          	</div> <!-- .row Wnd --> 
         </div> <!-- container End -->

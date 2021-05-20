@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<!-- bootstrap -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,6 +20,11 @@
     <link rel="stylesheet" href="/resources/bootstrap/css/flaticon.css">
     <link rel="stylesheet" href="/resources/bootstrap/css/icomoon.css">
     <link rel="stylesheet" href="/resources/bootstrap/css/style.css">
+	
+	<!-- custom -->
+	<link rel="stylesheet" href="/resources/css/notice.css">
+	<link rel="stylesheet" href="/resources/css/member.css">
+	
 </head>
 
 <body>
