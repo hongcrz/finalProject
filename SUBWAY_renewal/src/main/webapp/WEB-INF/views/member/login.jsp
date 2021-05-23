@@ -1,37 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../include/header.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ include file="../include/pre-header.jsp" %>
 
 	<!-- 여기서부터 로그인 영역입니다  -->
 	<div class="container">
 		<div class="row text-center" style="width:100%;">
 			<div class="form-box form-box-B">
-				<form action="" method="post">
+				<form action="/login" method="post" >
 					<div class="txt-box">
 						<h1> Login </h1>
 						<h6> 써브웨이 회원으로 로그인하시면 <br/> 다양한 서비스를 이용할 수 있습니다. </h6>
 					</div>
+					<div>
+						<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION }">
+							<font color="red">
+								<p> 로그인 실패 <br>
+								 ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message} </p>
+								<c:remove var="SPRING_SECURITY_LAST_EXCEPTION" scope="session"/>
+							</font>
+						</c:if>
+					</div> 
 					<div class="dl-box">
 						<dl>
 							<dt><label for="uId"> <strong>아이디</strong></label></dt>
-							<dd><input type="text" id="uId" size="30"></dd>
+							<dd><input type="text" name="userid" id="uId" size="30"></dd>
 						</dl>
 					</div>
 					<div class="dl-box">
 						<dl>
 							<dt><label for="uPw"> <b>비밀번호</b> </label></dt>
-							<dd><input type="password" id="uPw" size="30"></dd>
+							<dd><input type="password" name="userpw" id="uPw" size="30"></dd>
 						</dl>
 					</div>
 					<div class="input-box">
-						<input type="radio" name="remember-me" id="rem" /> <label for="rem">로그인 정보 저장</label>
+						<input type="radio" name="remember-me"/> <label for="rem">로그인 정보 저장</label>
 					</div>
-					<div class="btn-box">
-						<a href="#">login</a>
-					</div>
+					
+					<button type="submit" class="btn-box">Login</button>
+					
+					<!--  csrf 공격 방어를 위해 동적 생성 -->
+		        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }" />
+		        	
 				</form>
 			</div>
 		</div> <!-- .row End -->
 	</div> <!-- .container End -->
 
 
-<%@ include file="../include/footer.jsp" %>
+<%@ include file="../include/pre-footer.jsp" %>

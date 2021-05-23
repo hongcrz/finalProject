@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>subway</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<link rel="stylesheet" href="css/ionicons.min.css">
+
+<link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/icomoon.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$('.slider').bxSlider();
+	});
+	$(document).ready(function() {
+		$(".tab_btn li").click(function() {
+			var list = $(this).index();
+			$(".tab_btn li").removeClass("on");
+			$(this).addClass("on");
+
+			$(".tab_cont > li").hide();
+			$(".tab_cont > li").eq(list).show();
+		});
+	});
+</script>
+<style type="text/css">
+ul, li {
+	list-style: none;
+}
+
+/* body { 
+	overflow-x: hidden;
+	overflow-y: auto;
+} */
+
+#main_manu, #sub_menu {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+/*안쪽 여백*/
+#main_menu>li>a {
+	display: block;
+}
+
+/*서브 메뉴 숨기기*/
+#sub_menu {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+}
+
+/*서브 메뉴 마우스 올려 놓을시 나오게 하기*/
+#main_menu:hover #sub_menu {
+	opacity: 1;
+	visibility: visible;
+}
+
+.nav-item {
+	width: 9%;
+	font-size: 18px;
+	background-color: white;
+}
+
+#sub_menu>li {
+	font-size: 15px;
+}
+
+#main_menu:hover .nav-link {
+	color: #009223;
+}
+
+#sub_menu>li {
+	font-size: 15px;
+	padding: 1% 0 1%;
+	display: block;
+}
+
+.main_tap_event_wrapper {
+	position: relative;
+	height: 490px;
+}
+
+.main_tap_event_wrapper ul {
+	position: relative;
+	height: 440px;
+	overflow: hidden;
+}
+
+.main_tap_event_wrapper ul li {
+	float: left;
+	list-style: none;
+	position: relative;
+	width: 1280px;
+}
+
+.main_tap_event_wrapper .quick_link {
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 1170px;
+	margin-left: -585px;
+	text-align: right;
+	z-index: 5;
+}
+
+.main_tap_event_wrapper .quick_link .quick_link_content {
+	overflow: hidden;
+	float: right;
+	display: table;
+}
+
+.main_tap_event_wrapper .quick_link .quick_link_content>div {
+	display: table-cell;
+	vertical-align: bottom;
+	height: 80px;
+}
+
+.main_tap_event_wrapper .quick_link .quick_link_content .store a {
+	background-color: #ffce32;
+	border-radius: 30px 0 0 0;
+	float: right;
+	transition-duration: 0.2s;
+	letter-spacing: -0.02em;
+}
+
+.main_tap_event_wrapper .quick_link .quick_link_content>div a {
+	display: block;
+	width: 300px;
+	height: 80px;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+
+.main_tap_event_wrapper .quick_link .quick_link_content .franchise a {
+	background-color: #009223;
+	border-radius: 0 0 30px 0;
+	float: left;
+	letter-spacing: -0.05em;
+}
+
+.tab_btn:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.tab_btn li {
+	float: right;
+	display: block;
+	width: 110px;
+	height: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #000;
+	text-align: center;
+	line-height: 20px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.tab_btn li.on {
+	background-color: white;
+	color: #009223;
+}
+
+.tab_cont {
+	width: 1200px;
+	height: 320px;
+	position: relative;
+}
+
+.tab_cont>li {
+	width: 1200px;
+	height: 320px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: none;
+	overflow: visible;
+}
+
+.tab_cont>li:nth-child(1) {
+	background-color: white;
+	display: block;
+}
+
+.tab_cont>li:nth-child(2) {
+	background-color: white;
+}
+
+.tab_cont>li:nth-child(3) {
+	background-color: white;
+}
+
+.tab_cont>li:nth-child(4) {
+	background-color: white;
+}
+
+.quick_menu {
+	text-align: center;
+	padding: 40px 0 37px;
+}
+
+.quick_menu ul {
+	overflow: hidden;
+	display: inline-block;
+}
+
+.quick_menu ul li a {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	height: 70px;
+	padding-left: 90px;
+}
+
+.quick_menu ul li .icon {
+	background: url(image/ETC_icon/icon_quickmenu.png) no-repeat;
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.quick_menu ul li strong {
+	color: black;
+	font-size: 18px;
+	display: block;
+	margin-top: 12px;
+	text-align: left;
+}
+
+.quick_menu ul li span {
+	color: silver;
+	font-size: 13px;
+	display: block;
+	margin-top: 6px;
+	letter-spacing: -0.02em;
+	text-align: left;
+}
+
+.nav-item {
+	width: 180px;
+	position: relative;
+	text-align: center;
+}
+
+#sub_menu {
+	text-align: center;
+}
+
+#sub_menu li a {
+	color: gray;
+}
+
+#sub_menu li>a:hover {
+	font-weight: bold;
+}
+.tab_cont ul>li{
+	width: 260px;
+	text-align: center;
+}
+.tab_cont img{
+	width: 100%;
+	height: 182px;
+}
+.tab_cont ul li{
+	float: left;
+	margin-right: 30px;
+}
+.tab_cont ul li:hover img{
+	transform:scale(1.2 , 1.2);
+}
+.tab_cont>title{
+	color: black;
+}
+.tab_cont>p{
+	font-size: 12px;
+}
+/*해더 메뉴 부분 필요 요소들 끝*/
+</style>
+
+</head>
+<body>
+	<div class="header">
+		<div style="background-color: #62ce08; height: 5px"></div>
+		<div style="float: right; padding-right: 10%; padding-top: 1.9%;">
+			<a href="#"
+				style="color: #666666; font-size: 13px; font-weight: normal; height: 30px;">로그인</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#"
+				style="color: #666666; font-size: 13px; font-weight: normal; height: 30px;">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="https://www.subway.com/en-us/exploreourworld"><img
+				alt="global" src="image/SNS_icon/icon_utill_global.png"></a>
+		</div>
+		<div style="text-align: center; padding: 2%; padding-left: 22%;">
+			<img alt="" src="image/Logo/logo_w.png">
+		</div>
+
+
+		<nav
+			class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+			id="ftco-navbar">
+			<div class="container-fluid"
+				style="width: 100%; background-color: white;">
+				<div class="collapse navbar-collapse" id="ftco-nav">
+					<ul id="main_menu" class="navbar-nav m-auto">
+						<li class="nav-item"><a href="#" class="nav-link"
+							style="font-size: 18px; color: black;">브랜드</a>
+							<div>
+								<ul id="sub_menu"
+									style="background-color: white; width: 100%; position: absolute;">
+									<li><a href="#">써브웨이 약속</a></li>
+									<li><a href="#">써브웨이 역사</a></li>
+									<li><a href="#">샌드위치 아티스트 지원</a></li>
+									<li><a href="#">매장찾기</a></li>
+									<li><a>&nbsp</a></li>
+									<li><a>&nbsp</a></li>
+								</ul>
+							</div>
+						<li class="nav-item"><a href="#" class="nav-link"
+							style="font-size: 18px; color: black;">메뉴소개</a>
+							<div>
+								<ul id="sub_menu" style="background-color: white; width: 100%;">
+
+									<li><a href="#">샌드위치</a></li>
+									<li><a href="#">랩/기타</a></li>
+									<li><a href="#">찹샐러드</a></li>
+									<li><a href="#">아침메뉴</a></li>
+									<li><a href="#">스마일 썹</a></li>
+									<li><a href="#">단체메뉴</a></li>
+								</ul>
+							</div>
+						<li class="nav-item"><a href="#" class="nav-link"
+							style="font-size: 18px; color: black;">이용방법</a>
+							<div>
+								<ul id="sub_menu" style="background-color: white; width: 100%;">
+									<li><a href="#">신선한 재료 소개</a></li>
+									<li><a href="#">써브웨이 이용방법</a></li>
+									<li><a href="#">단체메뉴 이용방법</a></li>
+									<li><a href="#">App 이용방법</a></li>
+									<li><a>&nbsp</a></li>
+									<li><a>&nbsp</a></li>
+								</ul>
+							</div>
+						<li class="nav-item"><a href="#" class="nav-link"
+							style="font-size: 18px; color: black;">새소식</a>
+							<div>
+								<ul id="sub_menu" style="background-color: white; width: 100%;">
+									<li><a href="#">이벤트/프로모션</a></li>
+									<li><a href="#">뉴스/공지사항</a></li>
+									<li><a href="#">광고영상</a></li>
+									<li><a>&nbsp</a></li>
+									<li><a>&nbsp</a></li>
+									<li><a>&nbsp</a></li>
+								</ul>
+							</div>
+						<li class="nav-item"><a href="#" class="nav-link"
+							style="font-size: 18px; color: black;">가맹정</a>
+							<div>
+								<ul id="sub_menu" style="background-color: white; width: 100%;">
+									<li><a href="#">써브웨이 프랜차이즈</a></li>
+									<li><a href="#">가맹관련 FAQ</a></li>
+									<li><a href="#">가맹신청/문의</a></li>
+									<li><a href="#">지사안내</a></li>
+									<li><a href="#">사업설명회</a></li>
+									<li><a>&nbsp</a></li>
+								</ul>
+							</div>
+						<li class="nav-item"><a href="#" class="nav-link"
+							style="font-size: 18px; color: black;">온라인주문</a>
+							<div>
+								<ul id="sub_menu" style="background-color: white; width: 100%;">
+									<li><a href="#">FAST-SUB</a></li>
+									<li><a href="#">HOME-SUB</a></li>
+									<li><a href="#">단체주문</a></li>
+									<li><a>&nbsp</a></li>
+									<li><a>&nbsp</a></li>
+									<li><a>&nbsp</a></li>
+								</ul>
+							</div>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div id="container" class="main_wrapper">
+		<div class="main_tap_event_wrapper">
+			<ul class="bxslider" style="padding-left: 0px;">
+				<li><a href="#"> <img alt="스파이시 쉬림프"
+						src="image/Banner/main_PC2.png" />
+				</a></li>
+				<li><a href="#"> <img alt="썹프라이즈 터키아보카도"
+						src="image/Banner/main_PC3.png" />
+				</a></li>
+				<li><a href="#"> <img alt="민트초코"
+						src="image/Banner/main_PC4.png" />
+				</a></li>
+				<li><a href="#"> <img alt="02.내손안의 작은 써브웨이"
+						src="image/Banner/main_PC.png" />
+				</a></li>
+			</ul>
+			<div class="quick_link">
+				<div class="quick_link_content">
+					<div class="store">
+						<a href="#"> <strong
+							style="color: black; font-size: 22px; font-weight: bold; display: inline-block; padding: 27px 0 0 0;"><img
+								alt="map" src="image/ETC_icon/icon_map.png"
+								style="padding-right: 10px;"> 매장찾기</strong>
+						</a>
+					</div>
+					<div class="franchise">
+						<a href="#"> <strong
+							style="color: white; font-size: 22px; font-weight: bold; display: inline-block; padding: 27px 0 0 0;"><img
+								alt="fran" src="image/ETC_icon/icon_franchise.png"
+								style="padding-right: 10px;"> 가맹신청ㆍ문의</strong>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="subway_menu" style="height: 560px; padding: 60px 0 0;">
+			<div class="subway_menu_header"
+				style="width: 1170px; margin: 0 auto; padding-bottom: 33px; position: relative;">
+				<h2
+					style="font-size: 40px; font-weight: bold; background: url('image/ETC_icon/bul_tit.png') 0 12px no-repeat; min-height: 60px; padding: 17px 0 0 25px; margin-bottom: 1px;">Subway's
+					Menu</h2>
+				<div class="tab_wrap"
+					style="position: absolute; right: 0; top: 44px;">
+					<ul class="tab_btn" style="overflow: hidden;">
+						<li class="on">클래식</li>
+						<li>프레쉬&amp;라이트</li>
+						<li>프리미엄</li>
+						<li>아침메뉴</li>
+					</ul>
+					<ul class="tab_cont">
+						<li>
+							<ul>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="에그마요" src="image/Menu/sandwich/sandwich_cl06.png" /></div>
+											<strong class="title" style="color: black; font-size: 18px;">에그마요</strong>
+											<p style="font-size: 13px;color: silver;">부드러운 달걀과 고소한 마요네즈가 만나<br />더 부드러운 스테디셀러</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="이탈리안 비엠티" src="image/Menu/sandwich/sandwich_cl01.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">이탈리안 비엠티</strong>
+											<p style="font-size: 13px;color: silver;">페퍼로니, 살라미 그리고 햄이 만들어내는 최상의 조화! 전세계가 사랑하는 써브웨이의 베스트셀러! Biggest Meatiest Tastiest, its’ B.M.T!</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="비엘티" src="image/Menu/sandwich/sandwich_cl02.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">비엘티</strong>
+											<p style="font-size: 13px;color: silver;">오리지널 아메리칸 스타일 베이컨의<br />풍미와 바삭함 그대로</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="미트볼" src="image/Menu/sandwich/sandwich_cl03.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">미트볼</strong>
+											<p style="font-size: 13px;color: silver;">이탈리안 스타일 비프 미트볼에<br />써브웨이만의 풍부한 토마토 향이 살아있는<br />마리나라소스를 듬뿍</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="로티세리 바비큐 치킨" src="image/Menu/sandwich/sandwich_fl01.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">로티세리 바비큐 치킨</strong>
+											<p style="font-size: 13px;color: silver;">촉촉한 바비큐 치킨의 풍미가득.<br />손으로 찢어 더욱 부드러운 치킨의 혁명</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="로스트 치킨" src="image/Menu/sandwich/sandwich_fl02.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">로스트 치킨</strong>
+											<p style="font-size: 13px;color: silver;">오븐에 구워 담백한 저칼로리<br />닭가슴살의 건강한 풍미</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="써브웨이 클럽" src="image/Menu/sandwich/sandwich_fl04.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">써브웨이 클럽</strong>
+		                                    <p style="font-size: 13px;color: silver;">명실공히 시그니처 써브!<br />터키, 햄, 베이컨의 완벽한 앙상블</p><
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="터키" src="image/Menu/sandwich/sandwich_fl05.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">터키</strong>
+											<p style="font-size: 13px;color: silver;">280kcal로 슬림하게 즐기는<br />오리지날 터키 샌드위치</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li>
+		                            <a href="#">  
+										<div class="wrap">
+		                                    <div class="img"><img alt="스파이시 쉬림프" src="image/Menu/sandwich/sandwich_pm04.png" /></div>  
+											<strong class="title"style="color: black; font-size: 18px;">스파이시 쉬림프</strong>
+											<p style="font-size: 13px;color: silver;">빨간맛에 빠진 쉬림프!<br />이국적인 매콤함이 더해진<br />시즌 한정 스파이시 쉬림프!</p>
+										</div>
+									</a>
+								</li>
+								<li>
+		                            <a href="#">  
+										<div class="wrap">
+		                                    <div class="img"><img alt="스파이시 쉬림프 아보카도" src="image/Menu/sandwich/sandwich_pm05.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">스파이시 쉬림프 아보카도</strong>
+											<p style="font-size: 13px;color: silver;">매콤한 쉬림프와 부~드러운 아보카도가 만나,<br />이국적인 풍미 업!</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="쉬림프" src="image/Menu/sandwich/sandwich_pm10.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">쉬림프</strong>
+											<p style="font-size: 13px;color: silver;"> 탱글한 식감이 그대로 살아있는 통새우가<br />5마리 들어가 한 입 베어 먹을 때 마다<br />진짜 새우의 풍미가 가득</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="풀드 포크 바비큐" src="image/Menu/sandwich/sandwich_pm08.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">풀드 포크 바비큐</strong>
+											<p style="font-size: 13px;color: silver;">훈연한 미국 정통 스타일의 리얼 바비큐 풀드포크가 들어간 샌드위치</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="햄, 에그&치즈" src="image/Menu/sandwich/sandwich_bf01.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">햄, 에그&치즈</strong>
+											<p style="font-size: 13px;color: silver;">푹신한 오믈렛과 햄의 가장 클래식한 조화</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="웨스턴, 에그 & 치즈" src="image/Menu/sandwich/sandwich_bf02.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">웨스턴, 에그 & 치즈</strong>
+											<p style="font-size: 13px;color: silver;">토마토, 피망, 양파 세가지 야채가 더해져<br />더욱 신선한 하루 시작</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="베이컨, 에그 & 치즈" src="image/Menu/sandwich/sandwich_bf03.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">베이컨, 에그 & 치즈</strong>
+											<p style="font-size: 13px;color: silver;">오리지널 아메리칸 스타일 베이컨으로<br />더욱 풍성한 아침 식사</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="스테이크, 에그 & 치즈" src="image/Menu/sandwich/sandwich_bf04.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">스테이크, 에그 & 치즈</strong>
+											<p style="font-size: 13px;color: silver;">육즙 가득 비프 스테이크로<br />든든한 아침 식사</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="subway_etc"
+			style="width: 1280px; margin: 0 auto; padding: 80px 0; background: url('image/Background/bg_content.png');">
+			<div class="content_top" style="overflow: hidden;">
+				<div class="utilization"
+					style="background: url('image/Background/bg_utilization.png') 0 0 no-repeat; width: 400px; height: 300px; position: relative; margin-left: 55px; float: left;">
+					<p
+						style="color: white; font-size: 28px; font-weight: bold; line-height: 40px; position: absolute; left: 39px; top: 39px;">
+						써브웨이를<br />제대로 즐기는 방법!
+					</p>
+					<a class="btn" href="#"
+						style="position: absolute; left: 41px; bottom: 42px; border: 2px solid white; border-radius: 20px; width: 92px;"><span
+						style="display: block; height: 36px; color: white; font-size: 16px; line-height: 36px; font-weight: 300px;">이용방법</span></a>
+				</div>
+				<div class="history"
+					style="float: left; width: 825px; position: relative;">
+					<p
+						style="color: white; font-size: 28px; font-weight: bold; line-height: 40px; position: absolute; left: 410px; top: 39px;">
+						50년 역사를 가진<br />No.1 프랜차이즈의 성장기
+					</p>
+					<a class="btn" href="#"
+						style="position: absolute; left: 410px; bottom: 42px; border: 2px solid white; border-radius: 20px; width: 128px; display: inline-block; text-align: center; font-weight: bold;"><span
+						style="display: block; height: 36px; color: white; font-size: 16px; line-height: 36px; font-weight: 300px;">써브웨이
+							역사</span></a> <img src="image/Background/img_subway_history.png" />
+				</div>
+			</div>
+			<div class="content_bottom"
+				style="margin: 30px 55px 0 55px; overflow: hidden; background-color: white; border-radius: 20px;">
+				<div class="whats_new"
+					style="width: 870px; height: 300px; float: left; position: relative;">
+					<div class="hd" style="position: absolute; top: 75px; left: 60px;">
+						<h2
+							style="font-size: 40px; font-weight: bold; background: url('image/ETC_icon/bul_tit.png') 0 12px no-repeat; min-height: 60px; padding: 17px 0 0 25px; margin-bottom: 1px;">What's
+							New</h2>
+						<p style="text-align: center; line-height: 26px;">
+							써브웨이의 다양한 소식을<br /> 빠르게 전달해드립니다.
+						</p>
+					</div>
+					<div class="board_list"
+						style="color: black; position: absolute; left: 389px; top: 76px;">
+						<ul style="padding-left: 0px;">
+							<li style="margin-bottom: 10px;"><a href="#"
+								style="color: black;">써브웨이 2021년 5월 가격 인상 안내</a></li>
+							<li style="margin-bottom: 10px;"><a href="#"
+								style="color: black;">써브웨이 고객센터 2021년 설 연휴 휴무 안내</a></li>
+							<li style="margin-bottom: 10px;"><a href="#"
+								style="color: black;">2021년 설날 당일 매장 영업 안내 </a></li>
+						</ul>
+						<a class="more" href="#"
+							style="display: inline-block; color: silver; font-size: 14px; padding: 10px 0 8px;">more</a>
+					</div>
+				</div>
+				<div class="banner_sponsor">
+					<img alt="sponsor" src="image/Logo/logo_s.png">
+				</div>
+			</div>
+		</div>
+		<div class="quick_menu">
+			<ul>
+				<li class="quick1" style="float: left; margin-left: 0px;"><a
+					href="#">
+						<div class="icon" style="background-position: 0px 0px;"></div> <strong>프랜차이즈</strong>
+						<span>개설절차/투자비용 정보</span>
+				</a></li>
+				<li class="quick2" style="float: left; margin-left: 80px;"><a
+					href="#">
+						<div class="icon" style="background-position: -70px 0px;"></div> <strong>지사안내</strong>
+						<span>수도권/지방 지사정보</span>
+				</a></li>
+				<li class="quick3" style="float: left; margin-left: 80px;"><a
+					href="#">
+						<div class="icon" style="background-position: -140px 0px;"></div>
+						<strong>광고영상</strong> <span>TV광고/동영상</span>
+				</a></li>
+				<li class="quick4" style="float: left; margin-left: 80px;"><a
+					href="#">
+						<div class="icon" style="background-position: -210px 0px;"></div>
+						<strong>1:1 문의</strong> <span>개선/문의사항</span>
+				</a></li>
+			</ul>
+		</div>
+	</div>
+	<footer class="ftco-footer ftco-bg-dark ftco-section"
+		style="padding: 20px 0 10px 0;">
+		<div class="container">
+			<div class="row mb-5" style="height: 1px;">
+				<ul
+					style="list-style: none; font-size: 14px; padding-left: 15px; bottom: 1px; margin-bottom: 0.5%">
+					<li style="float: left; margin-right: 29px;"><a href="">이용약관</a></li>
+					<li style="float: left; margin-right: 29px;"><a href="">개인정보처리방침</a></li>
+					<li style="float: left; margin-right: 29px;"><a href="">써브카드</a></li>
+					<li style="float: left; margin-right: 29px;"><a href="">점주관리자</a></li>
+					<li style="float: left;"><a href="">Subway Listens</a></li>
+				</ul>
+			</div>
+		</div>
+		<div style="height: 20px;">
+			<hr color="gray;" style="padding: 0; background-color: gray">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-left"
+					style="font-size: small; width: 790px; float: left;">
+					<span style="width: 950px; height: 58px; float: left;"> 서울시
+						서초구 강남대로 535 프린스빌딩 15층 | 대표 : 콜린클락 전화 : 02-797-5036 | 사업자등록번호 :
+						101-84-04143 <br> SUBWAY® is a Registered Trademark of Subway
+						IP LLC. &copy;<script>
+							document.write(new Date().getFullYear());
+						</script> Subway IP LLC. All Rights Reserved. <br>
+					</span>
+					<div class="ftco-footer-widget mb-4"
+						style="float: left; padding: 0; margin-bottom: 0; height: 58px;">
+						<ul
+							class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
+							style="height: 58px; margin-top: 0">
+							<li class="ftco-animate"><a href="#"><span
+									class="icon-facebook"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span
+									class="icon-instagram"></span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="js/google-map.js"></script>
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async
+		src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-23581568-13');
+	</script>
+</body>
+</html>

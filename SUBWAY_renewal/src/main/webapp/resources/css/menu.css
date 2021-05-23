@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/* 메뉴 관련 css */
+	.body ul {
+	list-style: none;
+	}
+	.body li .label{
+		position: absolute;
+		left: 0;
+		top: 10px;
+		z-index: 3;
+		line-height: 120%;
+		display: block;
+	}
+	.body li .tit{
+	 color: #292929;
+	 font-size: 22px;
+	 font-weight : bold;
+	 font-family: font_ns, sans-serif;
+	 display: block;
+	 margin : 10 0 7px;
+	 position : relative;
+	 z-index: 5;
+	 top: 0;
+	}
+	.body li .eng{
+	 color: #666666;
+	 font-size: 16px;
+	 font-family: font_sw;
+	 display: block;
+	 letter-spacing: -0.06em;
+	 position : relative;
+	 z-index: 5;
+	 top: 0;
+	}
+	.body li .cal{
+	 color: #ffc300;
+	 font-size: 18px;
+	 font-family: font_sw;
+	 font-weight: bold;
+	 display: block;
+	 letter-spacing: -0.05em;
+	 z-index: 1;
+	}
+	.body li .label{
+		position: absolute;
+		left: 0;
+		top: 10px;
+		z-index: 3;
+	}

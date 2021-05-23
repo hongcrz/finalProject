@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean id="customAccessDenied" class="org.hju.security.CustomAccessDeniedHandler"></bean> -->
+	<!-- <bean id="customLoginSuccess" class="kr.co.subway.security.CustomLoginSuccessHandler"></bean> -->
+	
+	<bean id="bcryptPasswordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+		
+	<bean id="customUserDetailService" class="kr.co.subway.security.CustomUserDetailService"></bean>
+	
+	<!-- 브라우저  -->
+	<security:http auto-config="true" use-expressions="true">
+		<!-- auto-config : 자동 설정 / user-escpression : SpEL 사용(hasRole() 등)  -->
+		
+ 		<!-- 권한 설정 -->
+		<security:form-login 
+			username-parameter = "userid"
+			password-parameter = "userpw"
+			login-page = "/member/login"
+			default-target-url = "/main"
+		/>
+		
+		<security:intercept-url pattern="/notice/**" access="hasRole('ROLE_ADMIN')"/> 		
+		<security:intercept-url pattern="/menu/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/> 		
+		<security:intercept-url pattern="/**" access="permitAll" />
+ 		
+ 		
+			
+		<!-- <security:logout logout-url="/customLogout" invalidate-session="true" delete-cookies="remember-me"/> -->
+		
+		<!-- token -->
+		<!-- <security:csrf disabled="true"/> -->
+		
+		<security:access-denied-handler error-page="/member/accessError"/>
+		<!-- <security:access-denied-handler ref="customAccessDenied"/> -->
+		
+		<!-- 자동완성 기능  / 일주일 간 지속  -->
+		<!-- <security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/> -->
+	</security:http>
+	
+	
+	<!-- 시스템  -->
+	<security:authentication-manager>
+		<!--  manager에 정보를 제공하는 provider  -->
+		<!-- <security:authentication-provider user-service-ref="customUserDetailService"> -->
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="user" password="{noop}user" authorities="ROLE_USER"/>
+				<security:user name="admin" password="{noop}admin" authorities="ROLE_ADMIN"/>
+			</security:user-service>
+			<!-- <security:password-encoder ref="bcryptPasswordEncoder"/> -->		
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+</beans>

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.mb-4{
+	text-align: center;	
+}
+
+.contactForm .form-control {
+    border: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}

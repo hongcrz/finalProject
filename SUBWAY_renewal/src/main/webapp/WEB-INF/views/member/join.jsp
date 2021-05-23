@@ -60,21 +60,21 @@
 							<tr>
 								<th rowspan="3"><label for="uPw2"> <strong>주소 </strong></label></th>
 								<td colspan="2">
-									<input type="text" id="sample4_postcode" placeholder="우편번호" size="20">
+									<input type="text" id="postcode" placeholder="우편번호" size="20">
 									<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2">
-									<input type="text" id="sample4_roadAddress" placeholder="도로명주소" size="20">
-									<input type="text" id="sample4_jibunAddress" placeholder="지번주소" size="20">
+									<input type="text" id="roadAddress" placeholder="도로명주소" size="20">
+									<input type="text" id="jibunAddress" placeholder="지번주소" size="20">
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2">
 									<span id="guide" style="color:#999;display:none"></span>
-									<input type="text" id="sample4_detailAddress" placeholder="상세주소" size="20">
-									<input type="text" id="sample4_extraAddress" placeholder="참고항목" size="20">
+									<input type="text" id="detailAddress" placeholder="상세주소" size="20">
+									<input type="text" id="extraAddress" placeholder="참고항목" size="20">
 								</td>
 							<tr>
 							<tr> <!-- 왜..넣어야만 하는걸까..? -->

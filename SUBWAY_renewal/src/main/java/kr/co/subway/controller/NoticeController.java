@@ -16,5 +16,20 @@ public class NoticeController {
 		log.info("/get .... ");
 	}
 	
+	@GetMapping("/list")
+	public void list() {
+		log.info("/list .... ");
+	}
+	
+	@GetMapping("/register")
+	public void register() {
+		log.info("/register .... ");
+	}
+	
+	@GetMapping("/modify")
+	public void modify() {
+		log.info("/modify .... ");
+	}
+	
 	
 }

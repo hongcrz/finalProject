@@ -1,77 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-	
- 	<footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-6 col-lg">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="logo"><a href="#">Lawn <span>Care</span></a></h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Services</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Garden Care</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Lawn mowing</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Lawn Care</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Gutter Cleaning</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>New Lawn Installation</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Contact information</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Business Hours</h2>
-              <div class="opening-hours">
-              	<h4>Opening Days:</h4>
-              	<p class="pl-3">
-              		<span>Monday – Friday : 9am to 20 pm</span>
-              		<span>Saturday : 9am to 17 pm</span>
-              	</p>
-              	<h4>Vacations:</h4>
-              	<p class="pl-3">
-              		<span>All Sunday Days</span>
-              		<span>All Official Holidays</span>
-              	</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
-     <!-- loader -->
+	<footer class="ftco-footer ftco-bg-dark ftco-section"
+		style="padding: 20px 0 10px 0;">
+		<div class="container">
+			<div class="row mb-5" style="height: 1px;">
+				<ul
+					style="list-style: none; font-size: 14px; padding-left: 15px; bottom: 1px; margin-bottom: 0.5%">
+					<li style="float: left; margin-right: 29px;"><a href="">이용약관</a></li>
+					<li style="float: left; margin-right: 29px;"><a href="">개인정보처리방침</a></li>
+					<li style="float: left; margin-right: 29px;"><a href="">써브카드</a></li>
+					<li style="float: left; margin-right: 29px;"><a href="">점주관리자</a></li>
+					<li style="float: left;"><a href="">Subway Listens</a></li>
+				</ul>
+			</div>
+		</div>
+		<div style="height: 20px;">
+			<hr color="gray;" style="padding: 0; background-color: gray">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-left"
+					style="font-size: small; width: 790px; float: left;">
+					<span style="width: 950px; height: 58px; float: left;"> 서울시
+						서초구 강남대로 535 프린스빌딩 15층 | 대표 : 콜린클락 전화 : 02-797-5036 | 사업자등록번호 :
+						101-84-04143 <br> SUBWAY® is a Registered Trademark of Subway
+						IP LLC. &copy;<script>
+							document.write(new Date().getFullYear());
+						</script> Subway IP LLC. All Rights Reserved. <br>
+					</span>
+					<div class="ftco-footer-widget mb-4"
+						style="float: left; padding: 0; margin-bottom: 0; height: 58px;">
+						<ul
+							class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
+							style="height: 58px; margin-top: 0">
+							<li class="ftco-animate"><a href="#"><span
+									class="icon-facebook"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span
+									class="icon-instagram"></span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+  <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
+<!--  bootstrap script -->
   <script src="/resources/bootstrap/js/jquery.min.js"></script>
   <script src="/resources/bootstrap/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="/resources/bootstrap/js/popper.min.js"></script>
@@ -95,6 +72,25 @@
 
   gtag('config', 'UA-23581568-13');
  </script>
+ 
+ <!-- option script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.slider').bxSlider();
+	});
+	$(document).ready(function() {
+		$(".tab_btn li").click(function() {
+			var list = $(this).index();
+			$(".tab_btn li").removeClass("on");
+			$(this).addClass("on");
+
+			$(".tab_cont > li").hide();
+			$(".tab_cont > li").eq(list).show();
+		});
+	});
+</script>
  
 <!-- kakao map API -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -125,15 +121,15 @@
                 }
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample4_postcode').value = data.zonecode;
-                document.getElementById("sample4_roadAddress").value = roadAddr;
-                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+                document.getElementById('postcode').value = data.zonecode;
+                document.getElementById("roadAddress").value = roadAddr;
+                document.getElementById("jibunAddress").value = data.jibunAddress;
                 
                 // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
                 if(roadAddr !== ''){
-                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+                    document.getElementById("extraAddress").value = extraRoadAddr;
                 } else {
-                    document.getElementById("sample4_extraAddress").value = '';
+                    document.getElementById("extraAddress").value = '';
                 }
 
                 var guideTextBox = document.getElementById("guide");
