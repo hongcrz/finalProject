@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../include/header.jsp" %>
 
-<div class="content">
+<div class="content" style="width: 850px">
 	<div class="contact-wrap w-100 p-md-5 p-4">
 		<h2 class="mb-4">새 게시글 등록</h2>
 			
@@ -23,18 +23,17 @@
 					</div>
 				</div>
 				
-					<div class="upload">파일 업로드</div>
 					<div class="form-group uploadDiv">
-						<input type="file" name="uploadFile" multiple="multiple">
+						파일 업로드 <input type="file" name="uploadFile" multiple="multiple">
 					</div>
 					<div class="uploadResult">
 						<ul></ul>
 					</div>
-				
+
 				<div class="col-md-12">
-					<div class="form-group">
-						<input type="submit" value="등록" class="btn btn-primary">
-						<input type="submit" value="목록" class="btn btn-primary">
+					<div class="form-group" style="text-align: center">
+						<input type="submit" value="등록" class="btn btn-primary" style="margin:10px">
+						<input type="submit" value="목록" class="btn btn-primary" style="margin:10px">
 					</div>
 				</div>
 			</div>

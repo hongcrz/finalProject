@@ -3,21 +3,20 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../include/header.jsp" %>
 
-
-	<!-- 본문 리스트 -->
-	<div id="content">
-		<h2 class="subTitle">뉴스ㆍ공지사항</h2>
+<!-- 본문 리스트 -->
+<div id="content">
+	<h2 class="subTitle">뉴스ㆍ공지사항</h2>
 		<div class="board_list_wrapper">
-					<div class="content">
-						<p class="board_total" >총<strong>total</strong>건의 게시글이 있습니다.</p>
+			<div class="content" style= "border: none !important; margin: 0 auto" >
+				<p class="board_total" style="margin-top: 20px;">총<strong>total</strong>건의 게시글이 있습니다.</p>
 						
-						<div class="cont_right" style="float: right; ">
-							<button id="regBtn" type="button" style="width:100px; height: 40px; margin-bottom: 10px; 					background: #4e9525 ;
-    							border: 1px solid #4e9525; color: #fff" >글 등록</button>
-						</div>
-	
-						<table>
-							<caption>뉴스ㆍ공지사항 테이블</caption>
+					<div class="cont_right" style="float: right; ">
+						<button id="regBtn" type="button" style="width:100px; height: 40px; margin-bottom: 10px; background: #4e9525 ;
+    							border: 1px solid #4e9525; color: #fff; border-radius: 3px;" onclick="location.href='/notice/register'">글 등록</button>
+					</div>
+
+					<table>
+						<caption>뉴스ㆍ공지사항 테이블</caption>
 							<colgroup>
 								<col width="100px">
 								<col width="*">
@@ -127,10 +126,9 @@
 						</table>
 					</div>
 					
-					<!-- board 페이지 -->
-					<div>
+<!-- 페이징 구간 -->
+<div>
 	<div class="pagination">
-			
 			
 			<a class="arr prev" href="javascript:void(0);">◀</a>
 
@@ -166,10 +164,13 @@
 			
 			
 			<a class="arr next" href="javascript:void(0);" onclick="">▶</a>
-			
 	</div>
 </div> 
 
+<script type="text/javascript">
 
+	
+
+</script>
 
 <%@ include file="../include/footer.jsp" %>
