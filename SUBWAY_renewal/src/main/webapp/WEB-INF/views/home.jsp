@@ -25,6 +25,15 @@
 
 <br/>
 
+<sec:authorize access="isAuthenticated()">
+    <form action="/logout" method="POST">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+        <button type="submit">LOGOUT</button>
+    </form>
+</sec:authorize>
+
+<br/>
+
 <a href='<c:url value="/main" />'> main - permitAll</a> <br/>
 <a href='<c:url value="/menu/sandwich"/>'> menu - user, admin</a> <br/>
 <a href='<c:url value="/notice/get" />'>notice - admin</a>

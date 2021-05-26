@@ -5,10 +5,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import kr.co.subway.domain.MemberVO;
 import kr.co.subway.mapper.MemberMapper;
 import kr.co.subway.security.domain.CustomUserDetails;
-import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 

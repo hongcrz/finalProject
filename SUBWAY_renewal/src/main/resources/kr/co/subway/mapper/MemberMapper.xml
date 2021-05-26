@@ -5,7 +5,10 @@
   
  <mapper namespace = "kr.co.subway.mapper.MemberMapper">
  	<select id="read" resultType="kr.co.subway.security.domain.CustomUserDetails">
- 		SELECT * FROM tbl_member WHERE userid=#{userid}
+ 		SELECT * FROM tbl_user WHERE userid = #{userid}
  	</select>
- 
+ 	
+ 	<select id="searchByID" resultType="int">
+ 		SELECT COUNT(*) FROM tbl_user WHERE userid = #{userid}
+ 	</select>
  </mapper> 

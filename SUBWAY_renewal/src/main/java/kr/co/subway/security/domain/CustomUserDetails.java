@@ -8,12 +8,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+@SuppressWarnings("serial")
 public class CustomUserDetails implements UserDetails{
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6855100829668714175L;
 	// 기존 MemverVO의 fields
 	private String userid;
 	private String userpw;
@@ -38,7 +35,7 @@ public class CustomUserDetails implements UserDetails{
 		return userpw;
 	}
 	@Override
-	public String getUsername() {
+	public String getUsername() {			// userid 
 		return userid;
 	}
 	@Override
@@ -85,7 +82,7 @@ public class CustomUserDetails implements UserDetails{
 	public void setAuth(String auth) {
 		this.auth = auth;
 	}
-	public String getUserName() { // name
+	public String getUserName() { 			// username
 		return username;
 	}
 	public void setUsername(String username) {

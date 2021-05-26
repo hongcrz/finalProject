@@ -1,11 +1,16 @@
 package kr.co.subway.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.co.subway.mapper.MemberMapper;
+import kr.co.subway.service.MemberService;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
@@ -13,8 +18,11 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/member/*")
 public class MemberController {
 	
+	@Autowired
+	private MemberService service; 
+	
 	@GetMapping("/login")
-	public void login() {
+	public void goLogin() {
 		log.info("/member/login ..... ");
 	}
 	
@@ -24,8 +32,19 @@ public class MemberController {
 	}
 	
 	@GetMapping("/join")
-	public void join() {
+	public void goJoin() {
 		log.info("/member/join ...... ");
 	}
+	
+	@PostMapping("/join")
+	public String join() {
+		return "염병";
+	}
+	
+	@PostMapping("/searchByID")
+	public void searchByID() {
+		
+	}
+	
 			
 }
