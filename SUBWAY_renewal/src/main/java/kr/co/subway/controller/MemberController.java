@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.subway.mapper.MemberMapper;
 import kr.co.subway.service.MemberService;
@@ -41,7 +42,8 @@ public class MemberController {
 		return "염병";
 	}
 	
-	@PostMapping("/searchByID")
+	@ResponseBody	// ajax	사용 
+	@PostMapping("/checkID")
 	public void searchByID() {
 		
 	}

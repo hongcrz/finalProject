@@ -44,14 +44,28 @@
 		
 			// ajax를 이용하여 아이디 중복여부 판별 
 			$.ajax({
+				type: "POST",
 				url: "/member/checkID",
 				data: userid ,
 				dataType: "text",
+				contentType: "application/json; charset=UTF-8"
 				success: function(result){
-					
+					if(result.cnt > 0) {
+						alert("아이디가 존재합니다. 다른 아이디를 입력하세요.");
+						userid.focus();
+					} else {
+						alert("사용 가능한 아이디입니다.");
+						$("input[name='userpw']").focus();
+						
+						$(".btn-overlap").hide();		// check btn 비활성화 
+						$(".img-checked").show();		// checked img 활성화 
+						$("input[name='isIDchecked']").val("checked");
+						
+						
+					}
 				},
 				error: function(result){
-					
+					log.info("error : " + result);
 				}
 			});
 		}

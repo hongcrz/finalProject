@@ -28,5 +28,4 @@ public class MemberServiceImple implements MemberService {
 		
 		return cnt;
 	}
-	
 }
