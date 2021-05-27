@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace = "kr.co.subway.mapper.NoticeMapper">
+ 	<select id="getList" resultType="kr.co.subway.domain.NoticeVO">
+		<![CDATA[
+			select * from tbl_notice where nno > 0
+		]]>
+ 	</select>
+ 
+ 	<select id="read" resultType="kr.co.subway.domain.NoticeVO">
+		select * from tbl_notice where nno=#{nno}
+	</select>
+	
+	<delete id="delete">
+		delete from tbl_notice where nno=#{nno}
+	</delete>
+	
+	<insert id="insert">
+		insert into tbl_notice(nno, title, content)
+		values(seq_notice.nextval, #{title}, #{content})
+	</insert>
+ 	
+ 	<update id="update">
+		update tbl_notice
+		set
+			title=#{title},
+			content=#{content}
+		where 
+			nno=#{nno}
+	</update>
+	
+	
+ </mapper> 
