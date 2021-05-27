@@ -2,9 +2,24 @@
 <%@ include file="include/header.jsp" %>
 
 
+<style>
+	.bx-wrapper .bx-viewport {
+
+	-moz-box-shadow: none;
+
+	-webkit-box-shadow: none;
+
+	box-shadow: none;
+
+	border: none;
+}
+</style>
 <script>
 	$(document).ready(function() {
-		$('.slider').bxSlider();
+		$('.slider').bxSlider({
+			pager : false			
+		});
+		
 	});
 	$(document).ready(function() {
 		$(".tab_btn li").click(function() {
@@ -12,15 +27,15 @@
 			$(".tab_btn li").removeClass("on");
 			$(this).addClass("on");
 
-			$(".tab_cont > li").hide();
-			$(".tab_cont > li").eq(list).show();
+			$(".tab_cont >li").hide();
+			$(".tab_cont >li").eq(list).show();
 		});
 	});
 </script>
 
 <div id="container" class="main_wrapper">
 		<div class="main_tap_event_wrapper">
-			<ul class="bxslider" style="padding-left: 0px;">
+			<ul class="slider" style="padding-left: 0px;">
 				<li><a href="#"> <img alt="스파이시 쉬림프"
 						src="/resources/image/Banner/main_PC2.png" />
 				</a></li>
@@ -34,7 +49,7 @@
 						src="/resources/image/Banner/main_PC.png" />
 				</a></li>
 			</ul>
-			<div class="quick_link">
+			<div class="quick_link" ">
 				<div class="quick_link_content">
 					<div class="store">
 						<a href="#"> <strong
@@ -63,11 +78,11 @@
 					style="position: absolute; right: 0; top: 44px;">
 					<ul class="tab_btn" style="overflow: hidden;">
 						<li class="on">클래식</li>
-						<li>프레쉬&amp;라이트</li>
+						<li >프레쉬&amp;라이트</li>
 						<li>프리미엄</li>
 						<li>아침메뉴</li>
 					</ul>
-					<ul class="tab_cont">
+					<ul class="tab_cont" style="margin-top: 30px">
 						<li>
 							<ul>
 								<li>
@@ -107,6 +122,26 @@
 									</a>
 								</li>
 							</ul>
+							<!-- <ul>
+								<li>
+									<a href="/menuView/sandwich?menuItemIdx=1287">
+										<div class="wrap">
+											<div class="img"><img alt="햄" src="/resources/image/Menu/sandwich/sandwich_cl04.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">햄</strong>
+											<p style="font-size: 13px;color: silver;">기본 중에 기본!<br />풍부한 햄이 만들어내는<br />입 안 가득 넘치는 맛의 향연</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="/menuView/sandwich?menuItemIdx=1286">
+										<div class="wrap">
+											<div class="img"><img alt="참치" src="/resources/image/Menu/sandwich/sandwich_cl05.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">참치</strong>
+											<p style="font-size: 13px;color: silver;">남녀노소 누구나 좋아하는<br />담백한 참치와 고소한 마요네즈의<br />완벽한 조화</p>20180207
+										</div>
+									</a>
+								</li>
+							</ul> -->
 						</li>
 						<li>
 							<ul>
@@ -147,6 +182,17 @@
 									</a>
 								</li>
 							</ul>
+							<!-- <ul>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="베지" src="/resources/image/Menu/sandwich/sandwich_fl06.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">베지</strong>
+											<p style="font-size: 13px;color: silver;">갓 구운 빵과 신선한 7가지 야채로<br />즐기는 깔끔한 한끼</p>
+										</div>
+									</a>
+								</li>
+							</ul> -->
 						</li>
 						<li>
 							<ul>
@@ -187,6 +233,26 @@
 									</a>
 								</li>
 							</ul>
+							<!-- <ul>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="스파이시 이탈리안" src="/resources/image/Menu/sandwich/sandwich_pm06.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">스파이시 이탈리안</strong>
+											<p style="font-size: 13px;color: silver;">살라미, 페퍼로니가 입안 한가득!<br />쏘 핫한 이탈리아의 맛</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="wrap">
+											<div class="img"><img alt="치킨 데리야끼" src="/resources/image/Menu/sandwich/sandwich_pm07.png" /></div>
+											<strong class="title"style="color: black; font-size: 18px;">치킨 데리야끼</strong>
+											<p style="font-size: 13px;color: silver;">담백한 치킨 스트립에 달콤짭쪼름한 써브웨이<br />특제 데리야끼 소스와의 환상적인 만남</p>
+										</div>
+									</a>
+								</li>
+							</ul> -->
 						</li>
 						<li>
 							<ul>
@@ -314,5 +380,5 @@
 			</ul>
 		</div>
 	</div>
-
+	
 <%@ include file="include/footer.jsp" %>

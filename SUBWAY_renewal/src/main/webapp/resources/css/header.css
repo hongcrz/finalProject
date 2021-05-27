@@ -27,9 +27,16 @@ ul, li {
 }
 
 /*서브 메뉴 마우스 올려 놓을시 나오게 하기*/
+#main_menu:hover div{
+	height: 220px;
+    position: relative;
+    width: 100%;
+}
 #main_menu:hover #sub_menu {
 	opacity: 1;
-	visibility: visible;
+	visibility: inherit;
+	width: 100vw;
+	position: absolute;
 }
 
 .nav-item {
@@ -38,20 +45,35 @@ ul, li {
 	background-color: white;
 }
 
+
 #sub_menu>li {
 	font-size: 15px;
+	padding: 5% 0 5%;
+	display: block;
+}
+.nav-item {
+	width: 180px;
+	position: relative;
+	text-align: center;
 }
 
+#sub_menu {
+	text-align: center;
+}
+
+#sub_menu li a {
+	color: gray;
+}
+
+
+#sub_menu li>a:hover {
+	font-weight: bold;
+}
+
+/* 
 #main_menu:hover .nav-link {
 	color: #009223;
 }
-
-#sub_menu>li {
-	font-size: 15px;
-	padding: 1% 0 1%;
-	display: block;
-}
-
 .main_tap_event_wrapper {
 	position: relative;
 	height: 490px;
@@ -217,26 +239,9 @@ ul, li {
 	margin-top: 6px;
 	letter-spacing: -0.02em;
 	text-align: left;
-}
+} */
 
-.nav-item {
-	width: 180px;
-	position: relative;
-	text-align: center;
-}
-
-#sub_menu {
-	text-align: center;
-}
-
-#sub_menu li a {
-	color: gray;
-}
-
-#sub_menu li>a:hover {
-	font-weight: bold;
-}
-.tab_cont ul>li{
+/* .tab_cont ul>li{
 	width: 260px;
 	text-align: center;
 }
@@ -256,5 +261,5 @@ ul, li {
 }
 .tab_cont>p{
 	font-size: 12px;
-}
+} */
 /*해더 메뉴 부분 필요 요소들 끝*/

@@ -15,5 +15,29 @@ public class MenuController {
 	public void sandwich() {
 		log.info("go /menu/sandwich ...... ");
 	}
-			
+	@GetMapping("/morning")
+	   public void morning() {
+	      log.info("go /menu/morning ...... ");
+	   }
+	   
+	   @GetMapping("/salad")
+	   public void salad() {
+	      log.info("go /menu/salad ...... ");
+	   }
+	   
+	   @GetMapping("/sidedrink")
+	   public void sidedrink() {
+	      log.info("go /menu/salad ...... ");
+	   }
+	   
+	   @GetMapping("/unit")
+	   public void unit() {
+	      log.info("go /menu/unit ...... ");
+	   }
+	   
+	   @GetMapping("/catering")
+	   public void catering() {
+	      log.info("go /menu/catering ...... ");
+	   }
+	   			
 }
