@@ -10,5 +10,5 @@ public interface MemberMapper {
 	public int searchByID(String userid);
 	
 	// join : 유저객체를 던져서 DB에 저장 
-	//public void insert(CustomUserDetails user);
+	public void insert(CustomUserDetails user);
 }

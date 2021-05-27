@@ -47,8 +47,8 @@
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-<!--  bootstrap script -->
+ 
+ <!-- bootstrap script -->
   <script src="/resources/bootstrap/js/jquery.min.js"></script>
   <script src="/resources/bootstrap/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="/resources/bootstrap/js/popper.min.js"></script>
@@ -76,6 +76,7 @@
  <!-- option script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
 <script>
 	$(document).ready(function() {
 		$('.slider').bxSlider();
@@ -91,6 +92,7 @@
 		});
 	});
 </script>
+ 
  
 <!-- kakao map API -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

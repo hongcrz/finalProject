@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<!-- bootstrap -->
+<!-- bootstrap css-->
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -36,6 +36,27 @@
 <link rel="stylesheet" href="/resources/css/header.css">
 
 
+<!--  bootstrap script -->
+  <script src="/resources/bootstrap/js/jquery.min.js"></script>
+  <script src="/resources/bootstrap/js/jquery-migrate-3.0.1.min.js"></script>
+  <!-- 
+  <script src="/resources/bootstrap/js/popper.min.js"></script> 
+  <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+  -->
+  <!-- 
+  -->
+  <!-- 
+  <script src="/resources/bootstrap/js/jquery.easing.1.3.js"></script>
+  <script src="/resources/bootstrap/js/jquery.waypoints.min.js"></script>
+  <script src="/resources/bootstrap/js/jquery.stellar.min.js"></script>
+  <script src="/resources/bootstrap/js/owl.carousel.min.js"></script>
+  <script src="/resources/bootstrap/js/jquery.magnific-popup.min.js"></script>
+  <script src="/resources/bootstrap/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="/resources/bootstrap/js/google-map.js"></script>
+  <script src="/resources/bootstrap/js/main.js"></script>
+  -->
+  
 </head>
 <body>
 

@@ -17,7 +17,7 @@ h2{
 }
 
 div input{
-	text-transform: uppercase;
+/* 	text-transform: uppercase; */
     display: inline-block;
     padding: 4px 10px;
     margin-bottom: 7px;

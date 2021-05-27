@@ -12,6 +12,7 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 public class CustomUserDetailService implements UserDetailsService {
+	// security와 관련된 서비스인데 멤버인터페이스와 합쳐도 될까?
 	
 	@Setter(onMethod_ = @Autowired)
 	private MemberMapper mapper;
@@ -19,7 +20,7 @@ public class CustomUserDetailService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String userid) throws UsernameNotFoundException {
 		
-		log.warn("READ USER BY uid : " + userid);
+		log.warn("READ USER BY userid : " + userid);
 		CustomUserDetails user = mapper.read(userid);
 		
 		log.warn("USER : " + user);

@@ -1,15 +1,19 @@
 package kr.co.subway.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import kr.co.subway.mapper.MemberMapper;
+import kr.co.subway.security.domain.CustomUserDetails;
 import kr.co.subway.service.MemberService;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -38,14 +42,22 @@ public class MemberController {
 	}
 	
 	@PostMapping("/join")
-	public String join() {
-		return "염병";
+	public String join(CustomUserDetails user, RedirectAttributes rttr) {
+		log.info("insert user data ..... " + user);
+
+		service.register(user);
+		
+//		rttr.addFlashAttribute("result", user.getUserid());
+		return "redirect:/main";
 	}
 	
 	@ResponseBody	// ajax	사용 
 	@PostMapping("/checkID")
-	public void searchByID() {
+	public String searchByID(@RequestParam String userid) {
+		log.info("search ID : " + userid);
+		log.info("cnt : " + service.searchByID(userid));
 		
+		return String.valueOf(service.searchByID(userid));
 	}
 	
 			

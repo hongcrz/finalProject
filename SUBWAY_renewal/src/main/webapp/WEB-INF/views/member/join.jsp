@@ -3,38 +3,76 @@
 
 
 	<script type="text/javascript">
+		// 이 부분이 작동되지 않으므로 추후에 확인할 것~
+		// id 자동 영소문자 처리 
+		$("input[name='userid']").bind("keyup", function(){
+			$(this).val($(this).val().toLowerCase());
+		});
+
+		
 		// 필수 정보 확인 
 		function checkInfo(){
-			if($("input[name='userid']").val() == ''){
+			if($("#userid").val() == ''){
 				alert("아이디를 입력하세요.");
+				$("#userid").focus();
 				return false;
 			}
 			if($("input[name='isIDchecked']").val() == 'unchecked'){
 				alert("아이디 중복확인은 필수입니다.");
 				return false;
 			}
-			if($("input[name='userpw']").val() == ''){
+			if($("#userpw").val() == ''){
 				alert("비밀번호를 입력하세요.");
+				$("#userpw").focus();
 				return false;
 			}
-			if($("input[name='userpw']").val() != $("input[name='userpw2']").val()){
+			if($("#userpw").val() != $("input[name='userpw2']").val()){
 				alert("비밀번호가 같지 않습니다.");
+				$("input[name='userpw2']").focus();
 				return false;
 			}
+			
+			
+			//mergeData
+			var useremail;
+			var useraddress;
+				
+			if(($("#uemail").val() != '')){
+				useremail = $("#uemail").val() + "@"+ $("input[name='domains']").val();
+				$("#useremail").val(useremail)
+			}
+			
+			if($("#postcode").val() != ''){
+				useraddress = $("#postcode").val()
+					+ "/" + $("#roadAddress").val()
+					+ "/" + $("#jibunAddress").val();
+				
+				if($("#detailAddress").val() != '') {
+					useraddress += "/" + $("#detailAddress").val();
+				}
+				
+				useraddress += "/" + $("#extraAddress").val()
+				
+				$("#useraddress").val(useraddress);
+			}
+			
+			alert("써브웨이 멤버십 가입이 완료되었습니다.\n메인화면으로 이동합니다.");
 		}
+		
+
+		// 이 부분이 작동되지 않으므로 추후에 확인할 것~
+		// id값이 변경되면 중복확인여부를 무효화 처리함
+		$("#userid").on("keyup",function(){ 
+			$(".img-checked").hide();		// checked img 비활성화 
+			$(".btn-overlap").show();		// check btn 활성화 
+			$("input[name='isIDchecked']").val("unchecked");	// check 여부 초기화 
+		});
 		
 		
 		// ID 중복확인 
 		function checkID(){
 			
-			var userid = $("input[name='userid']").val();
-			
-			// id값이 변경되면 중복확인여부를 무효화 처리함
-			$(".userid").change(function(){ 
-				$(".btn-overlap").show();		// check btn 활성화 
-				$(".img-checked").hide();		// checked img 비활성화 
-				$("input[name='isIDchecked']").val("unchecked");	// check 여부 초기화 
-			});
+			var userid = $("#userid").val();
 			
 			// id를 입력하지 않았을 경우  
 			if(userid == ''){
@@ -46,22 +84,28 @@
 			$.ajax({
 				type: "POST",
 				url: "/member/checkID",
-				data: userid ,
-				dataType: "text",
-				contentType: "application/json; charset=UTF-8"
+				data:  {
+					"userid" : userid
+				}
+				,
+//				contentType: "application/json",
+//				async: false,
 				success: function(result){
-					if(result.cnt > 0) {
+//					alert("type : " + typeof result);
+//					alert("result : " + result);
+				
+					if(result == "1") {
 						alert("아이디가 존재합니다. 다른 아이디를 입력하세요.");
-						userid.focus();
-					} else {
+						$("#userid").focus();
+					} else if(result == "0") {
 						alert("사용 가능한 아이디입니다.");
 						$("input[name='userpw']").focus();
 						
 						$(".btn-overlap").hide();		// check btn 비활성화 
-						$(".img-checked").show();		// checked img 활성화 
+						$("#img-checked").show();		// checked img 활성화 
 						$("input[name='isIDchecked']").val("checked");
-						
-						
+					} else {
+						alert("Error: " + result);
 					}
 				},
 				error: function(result){
@@ -70,7 +114,7 @@
 			});
 		}
 		
-	
+
 	</script>
 	
 	
@@ -89,10 +133,10 @@
 						<table class="tbl tbl-step2">
 							<tr>
 								<th><label for="userid"> <strong>아이디</strong></label></th>
-								<td><input type="text" name="userid" id="userid" size="30"></td>
+								<td><input type="text" name="userid" id="userid" size="30" style="text-transform: lowercase;"></td>
 								<td>
 									<input type="button" value="ID check" class="btn-overlap" onclick="checkID()"/>
-									<img src="/resources/img/ETC_icon/check.png" id="img-checked" style="display:none;"/>
+									<img src="/resources/image/ETC_icon/check.png" id="img-checked" style="display:none; width: 10px; height: 10px;" />
 									<input type="hidden" name="isIDchecked" value="unchecked"/>
 								</td> 
 							</tr>
@@ -103,7 +147,7 @@
 							</tr>
 							<tr>
 								<th><label for="userpw2"> <strong>비밀번호 확인</strong></label></th>
-								<td><input type="password" name="userpw2 id="userpw2" size="30"></td>
+								<td><input type="password" name="userpw2" id="userpw2" size="30"></td>
 								<td></td>
 							</tr>
 						</table>
@@ -114,22 +158,23 @@
 						<p><strong> 선택 정보 </strong></p>
 						<table class="tbl tbl-step3">
 							<tr>
-								<th><label for="username"> <strong>이름</strong></label></th>
-								<td><input type="text" name="username" id="username" size="30"></td>
+								<th><label for="uname"> <strong>이름</strong></label></th>
+								<td><input type="text" name="uname" id="uname" size="30"></td>
 								<td></td>
 							</tr>
 							<tr>
-								<th><label for="useremail"> <strong>이메일 주소</strong></label></th>
+								<th><label for="uemail"> <strong>이메일 주소</strong></label></th>
 								<td>
-									<input type="text" name="useremail" id="useremail" size="10">
+									<input type="text" name="uemail" id="uemail" size="8" >
 									@
-									<input type="text" list="domains" size="15">
+									<input placeholder="select domains" list="domains" size="17" name="domains">
 									<datalist id="domains">
 										<option value="naver.com">naver.com</option>
 										<option value="daum.net">daum.net</option>
 										<option value="hanmail.net">hanmail.net</option>
 										<option value="gmail.com">gmail.com</option>
 									</datalist>
+									<input type="hidden" name="useremail" id="useremail" />
 								</td>
 								<td></td>
 							</tr>
@@ -155,6 +200,7 @@
 							<tr>
 							<tr> <!-- 왜..넣어야만 하는걸까..? -->
 								<td colspan="3">
+									<input type="hidden" name="useraddress" id="useraddress"/>
 								</td>
 							</tr>
 						</table>

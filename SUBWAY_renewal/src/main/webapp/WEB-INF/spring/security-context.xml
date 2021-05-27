@@ -4,13 +4,14 @@
 	xmlns:security="http://www.springframework.org/schema/security"
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+	
+	<!-- password encoding -->
 	<bean id="bcryptPasswordEncoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
 		
 	<bean id="userService" class="kr.co.subway.security.CustomUserDetailService"></bean>
 	
-	<!-- 브라우저  -->
+	<!-- browser  -->
 	<security:http auto-config="true" use-expressions="true">
 		<!-- auto-config : 자동 설정 / user-escpression : SpEL 사용(hasRole() 등)  -->
 		
@@ -43,7 +44,7 @@
 	</security:http>
 	
 	
-	<!-- 시스템  -->
+	<!-- system  -->
 	<security:authentication-manager>
 		<!--  manager에 정보를 제공하는 provider  -->
 		<security:authentication-provider user-service-ref="userService">

@@ -27,7 +27,17 @@ public class MemberMapperTests {
 	@Test
 	public void testSearchByID() {
 		log.info("search by userID");
-		log.info(".......... there is " + mapper.searchByID("admin29") + " data in DB");
+		log.info(".......... there is " + mapper.searchByID("USER00") + " data in DB");
 	}
 	
+//	@Test
+//	public void testInsert() {
+//		CustomUserDetails user = new CustomUserDetails();
+//		user.setUserid("customUser07");
+//		user.setUserpw("1234");
+//		user.setUname("홍길동");
+//		
+//		mapper.insert(user);
+//		log.info("insert CumstomUser .... " + user);
+//	}
 }

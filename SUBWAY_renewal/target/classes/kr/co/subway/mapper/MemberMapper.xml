@@ -11,4 +11,9 @@
  	<select id="searchByID" resultType="int">
  		SELECT COUNT(*) FROM tbl_user WHERE userid = #{userid}
  	</select>
+ 
+ 	<insert id="insert">
+ 		INSERT INTO tbl_user(userid, userpw, username, useremail, useraddress, auth) 
+		VALUES(#{userid}, #{userpw}, #{uname, jdbcType=VARCHAR}, #{useremail, jdbcType=VARCHAR}, #{useraddress, jdbcType=VARCHAR}, #{auth})
+ 	</insert>
  </mapper> 
