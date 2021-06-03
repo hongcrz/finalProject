@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ include file="../include/header.jsp" %>
 
 	
@@ -9,7 +12,8 @@
         		<!-- left area -->
           		<div class="col-lg-8 ftco-animate">
 		          	<h2> notice title area </h2>
-		          	<h6> regdate area </h6>
+		          		<input name="nno" value='<c:out value="${notice.nno }"/>'>
+		          	<h6><input name="regdate" value='<c:out value="${notice.regdate }"/>'></h6>
 		          	<br/>
 		          	<p> this is content area(images) </p>
 		          	<p> <!-- 공지사항 메인 이미지를 등록  -->
@@ -19,8 +23,7 @@
 		              	-->
 			          	<img src="/resources/image/notice_test_img1.png" alt="" class="img-fluid">
 		            </p>
-		            <p> this is content area(text)
-
+		            <p> <input name="content" value='<c:out value="${notice.content }"/>'></p>
 		            <div class="tag-widget post-tag-container mb-5 mt-5">
 		              <div class="tagcloud">
 		                <a href="#" class="tag-cloud-link">Life</a>
@@ -72,6 +75,7 @@
 		            </div>
             	</div> <!-- .col-lg-4 End -->
          	</div> <!-- .row Wnd --> 
+         	
         </div> <!-- container End -->
     </section> <!-- .section -->
 	<!-- 여기까지 게시판 영역입니다  -->

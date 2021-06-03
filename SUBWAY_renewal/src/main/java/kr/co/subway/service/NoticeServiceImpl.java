@@ -16,16 +16,29 @@ public class NoticeServiceImpl implements NoticeService{
 	
 	@Autowired	
 	private NoticeMapper mapper;
+	
+	@Override
+	public List<NoticeVO> getList(Criteria cri) {
+		log.info("get List with criteria :" + cri);
+		return mapper.getListWithPaging(cri);
+	}
 
 	@Override
-	public List<NoticeVO> getList(Long nno) {
-		log.info("getList...");
-		return mapper.getList();
+	public int getTotal(Criteria cri) {
+		log.info("get Total Count...");
+		return mapper.getTotalCount(cri);
 	}
+
+//	@Override
+//	public List<NoticeVO> getList(Long nno) {
+//		
+//		return mapper.getList();
+//	}
 
 	@Override
 	public void register(NoticeVO notice) {
 		log.info("register...." + notice);
+		mapper.insertSelectKey(notice);
 	}
 
 	@Override

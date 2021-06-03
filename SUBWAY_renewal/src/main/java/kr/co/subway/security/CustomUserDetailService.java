@@ -7,14 +7,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import kr.co.subway.mapper.MemberMapper;
 import kr.co.subway.security.domain.CustomUserDetails;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
 public class CustomUserDetailService implements UserDetailsService {
-	// security와 관련된 서비스인데 멤버인터페이스와 합쳐도 될까?
 	
-	@Setter(onMethod_ = @Autowired)
+	@Autowired
 	private MemberMapper mapper;
 	
 	@Override

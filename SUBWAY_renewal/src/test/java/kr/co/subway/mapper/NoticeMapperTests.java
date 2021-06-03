@@ -28,21 +28,22 @@ public class NoticeMapperTests {
 //		}
 //	}
 	
-//	@Test
-//	public void testRead() {
-//		log.info(mapper.read(3L));
-//	}
+	
+	@Test
+	public void testRead() {
+		log.info(mapper.read(12L));
+	}
 	
 //	@Test
 //	public void testDelete() {
-//		log.info("DELETE COUNT :" + mapper.delete(6L));
+//		log.info("DELETE COUNT :" + mapper.delete(7L));
 //	}
 	
 //	@Test
 //	public void testInsert() {
 //		NoticeVO vo = new NoticeVO();
-//		vo.setTitle("새 글2");
-//		vo.setContent("새 내용2");
+//		vo.setTitle("새 글23");
+//		vo.setContent("새 내용23");
 //		
 //		mapper.insert(vo);
 //		
@@ -58,5 +59,16 @@ public class NoticeMapperTests {
 //		
 //		log.info("UPDATE COUNT :" + mapper.update(vo));	
 //	}
+	
+//@Test
+//public void testInsertSelectKey() {
+//	NoticeVO vo = new NoticeVO();
+//	vo.setTitle("새로 작성하는 select key2");
+//	vo.setContent("새로 작성하는 내용 select key2");
+//	
+//	mapper.insertSelectKey(vo);
+//	
+//	log.info(vo);
+//}
 	
 }

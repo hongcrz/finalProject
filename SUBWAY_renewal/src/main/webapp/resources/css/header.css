@@ -16,7 +16,7 @@ ul, li {
 
 /*안쪽 여백*/
 #main_menu>li>a {
-	display: block;
+	display: inline-block;
 }
 
 /*서브 메뉴 숨기기*/
@@ -25,20 +25,29 @@ ul, li {
 	opacity: 0;
 	visibility: hidden;
 }
-
+.nav_back{
+	opacity: 0;
+	visibility: hidden;
+}
 /*서브 메뉴 마우스 올려 놓을시 나오게 하기*/
 #main_menu:hover div{
 	height: 220px;
-    position: relative;
+    position: absolute;
     width: 100%;
+	display: block;
 }
+
 #main_menu:hover #sub_menu {
 	opacity: 1;
 	visibility: inherit;
 	width: 100vw;
 	position: absolute;
+	display: block;
 }
-
+#main_menu:hover .nav_back{
+	opacity: 1;
+	visibility: visible;
+}
 .nav-item {
 	width: 9%;
 	font-size: 18px;

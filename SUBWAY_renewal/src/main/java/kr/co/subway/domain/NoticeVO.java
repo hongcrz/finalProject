@@ -10,5 +10,4 @@ public class NoticeVO {
 	private String title;
 	private String content;
 	private Date regdate;
-	private String url;
 }

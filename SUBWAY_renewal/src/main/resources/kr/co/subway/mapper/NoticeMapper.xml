@@ -4,11 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
  <mapper namespace = "kr.co.subway.mapper.NoticeMapper">
- 	<select id="getList" resultType="kr.co.subway.domain.NoticeVO">
-		<![CDATA[
-			select * from tbl_notice where nno > 0
-		]]>
- 	</select>
+ 
+<!--  	<select id="getList" resultType="kr.co.subway.domain.NoticeVO"> -->
+<!-- 			select * from tbl_notice order by nno desc -->
+<!--  	</select> -->
  
  	<select id="read" resultType="kr.co.subway.domain.NoticeVO">
 		select * from tbl_notice where nno=#{nno}
@@ -32,5 +31,30 @@
 			nno=#{nno}
 	</update>
 	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="nno" order="BEFORE" resultType="long"> 
+			select seq_notice.nextval from dual
+		</selectKey>
+		insert into tbl_notice(nno, title, content)
+		values(#{nno}, #{title}, #{content})
+	</insert>
 	
+	<select id="getListWithPaging" resultType="kr.co.subway.domain.NoticeVO">
+		<![CDATA[
+			select nno, title, content, regdate
+			from (
+   				select /*+index_desc(tbl_notice pk_notice) */
+       				rownum rn, nno, title, content, regdate
+   				from tbl_notice
+   				where rownum <= #{pageNum} * #{amount}
+				order by nno desc	
+				)
+			where rn > (#{pageNum} -1) * #{amount}
+			
+		]]>
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from tbl_notice where nno > 0
+	</select>
  </mapper> 

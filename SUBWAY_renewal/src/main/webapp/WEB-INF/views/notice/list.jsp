@@ -8,7 +8,7 @@
 	<h2 class="subTitle">뉴스ㆍ공지사항</h2>
 		<div class="board_list_wrapper">
 			<div class="content" style= "border: none !important; margin: 0 auto" >
-				<p class="board_total" style="margin-top: 20px;">총<strong>total</strong>건의 게시글이 있습니다.</p>
+				<p class="board_total" style="margin-top: 20px;">총<strong><c:out value="${total }"/></strong> 건의 게시글이 있습니다.</p>
 						
 					<div class="cont_right" style="float: right; ">
 						<button id="regBtn" type="button" style="width:100px; height: 40px; margin-bottom: 10px; background: #4e9525 ;
@@ -23,153 +23,88 @@
 								<col width="50px">
 								<col width="120px">
 							</colgroup>
+							
+					<thead>
+						<tr style="background-color:#dddddd">
+							<th style="text-align: center; border-bottom: 1px solid #dddddd">번호</th>
+							<th style="text-align: center; border-bottom: 1px solid #dddddd">제목</th>
+							<td><div></div></td>
+							<th style="text-align: center; border-bottom: 1px solid #dddddd">작성일</th>
+						</tr>
+					</thead>
 							<tbody>
-								<tr class="notice">
-									<td><div class="icon_notice"><img alt="" src="/resources/image/ETC_icon/icon_notice.png"></div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이 2021년 5월 가격 인상 안내</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">21.05.03</div></td>
-								</tr>
-								<tr class="notice">
-									<td><div class="icon_notice"><img alt="" src="/resources/image/ETC_icon/icon_notice.png"></div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이와 함께하는 JTBC '라이브온'</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">20.11.16</div></td>
-								</tr>
-								<tr class="notice">
-									<td><div class="icon_notice"><img alt="" src="/resources/image/ETC_icon/icon_notice.png"></div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이 앱 출시 및 앱 사용 불가 매장 안내</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">20.06.24</div></td>
-								</tr>
-								<tr class="notice">
-									<td><div class="icon_notice"><img alt="" src="/resources/image/ETC_icon/icon_notice.png"></div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이 그릴드 랩 &amp; 파니니 일부 매장 판매 안내  </a></div></td>
-									<td><div></div></td>
-									<td><div class="date">19.10.10</div></td>
-								</tr>
-								<tr class="notice">
-									<td><div class="icon_notice"><img alt="" src="/resources/image/ETC_icon/icon_notice.png"></div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이 모바일 상품권 이용 안내의 건</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">19.08.20</div></td>
-								</tr>
-								<tr class="notice">
-									<td><div class="icon_notice"><img alt="" src="/resources/image/ETC_icon/icon_notice.png"></div></td>
-									<td><div class="title"><a href="#" onclick="">고객 경험 설문조사 프로그램 안내</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">18.07.20</div></td>
-								</tr>
-								
-								<!-- nno 나오는곳 -->
+							<c:forEach var="notice" items="${list }">
 								<tr>
-									<td><div class="num">146</div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이 2021년 5월 가격 인상 안내</a></div></td>
+									<td><div class="num"><c:out value="${notice.nno}"></c:out></div></td>
+									<td>
+										<div class="title">
+											<a class="move" href='<c:out value="${notice.nno}"/>'><c:out value="${notice.title}"/>
+											</a>
+										</div>
+									</td>
 									<td><div></div></td>
-									<td><div class="date">21.05.03</div></td>
+									<td><div class="date"><fmt:formatDate value="${notice.regdate}" pattern="yyyy-MM-dd"/></div></td>
 								</tr>
-								<tr>
-									<td><div class="num">145</div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이 고객센터 2021년 설 연휴 휴무 안내</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">21.02.09</div></td>
-								</tr>
-								<tr>
-									<td><div class="num">144</div></td>
-									<td><div class="title"><a href="#" onclick="">2021년 설날 당일 매장 영업 안내 </a></div></td>
-									<td><div></div></td>
-									<td><div class="date">21.02.09</div></td>
-								</tr>
-								<tr>
-									<td><div class="num">143</div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이와 함께하는 JTBC '라이브온'</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">20.11.16</div></td>
-								</tr>
-								<tr>
-									<td><div class="num">142</div></td>
-									<td><div class="title"><a href="#" onclick="">2020년 추석 당일 매장운영 안내</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">20.09.28</div></td>
-								</tr>
-								<tr>
-									<td><div class="num">141</div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이 고객센터 2020년 추석 연휴 휴무 안내</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">20.09.28</div></td>
-								</tr>
-								<tr>
-									<td><div class="num">140</div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이와 함께하는 KBS '오!삼광빌라' </a></div></td>
-									<td><div></div></td>
-									<td><div class="date">20.09.21</div></td>
-								</tr>
-								<tr>
-									<td><div class="num">139</div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이와 함께하는 tvN '청춘기록'</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">20.09.07</div></td>
-								</tr>
-								<tr>
-									<td><div class="num">138</div></td>
-									<td><div class="title"><a href="#" onclick="">써브웨이와 함께하는 tvN '식스센스'</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">20.09.07</div></td>
-								</tr>
-								<tr>
-									<td><div class="num">137</div></td>
-									<td><div class="title"><a href="#" onclick="">개인정보 처리방침 개정안내</a></div></td>
-									<td><div></div></td>
-									<td><div class="date">20.07.01</div></td>
-								</tr>
+							</c:forEach>
 							</tbody>
 						</table>
+							
 					</div>
-					
+				</div>
+			</div>
+
+
 <!-- 페이징 구간 -->
-<div>
 	<div class="pagination">
-			
-			<a class="arr prev" href="javascript:void(0);">◀</a>
-
-			
-				<a class="active" href="#">1</a>
-
-			
-				<a href="#" onclick="">2</a>
-
-			
-				<a href="#" onclick="">3</a>
-
-			
-				<a href="#" onclick="">4</a>
-
-			
-				<a href="#" onclick="">5</a>
-
-			
-				<a href="#" onclick="">6</a>
-
-			
-				<a href="#" onclick="">7</a>
-
-			
-				<a href="#" onclick="">8</a>
-
-			
-				<a href="#" onclick="">9</a>
-
-			
-				<a href="#" onclick="">10</a>
-			
-			
-			<a class="arr next" href="javascript:void(0);" onclick="">▶</a>
+			<div class="pull-right">
+					<ul class="pagination"><a class="arr prev" href="#">◀</a>
+						<c:if test="${pageMaker.prev }">
+							<li class="paginate_button previous">
+								<a href="${pageMaker.startPage -1 }"> &lt; </a>
+							</li>
+						</c:if>
+						
+						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+							<li class="paginate_button ${pageMaker.cri.pageNum == num ? 'active' : ''}">
+								<a href="${num }">${num }</a>
+							</li>
+						</c:forEach>
+						
+						<c:if test="${pageMaker.next }">
+							<li class="paginate_button">
+								<a href="${pageMaker.endPage +1 }"> &gt; </a>
+							</li>
+						</c:if>
+						<a class="arr next" href="#">▶</a>
+					</ul>
+				</div>
+				
+				<form action="/notice/list" method="get" id="actionForm">
+					<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }"/>
+					<input type="hidden" name="amount" value="${pageMaker.cri.amount }"/>
+				</form>
 	</div>
-</div> 
 
+<!-- page  -->
+				
 <script type="text/javascript">
+	$(function(){
+		//-------------조회 화면 이동 이벤트---------------
+		//class = move
+		$(".move").click(function(e){
+			e.preventDefault();
+			
+			//<form>에 추가
+			var value = $(this).attr("href");
+			
+			//input태그 추가하기
+			actionForm.append("<input type='hidden' name='nno' value='" + $(this).attr("href")+ "'>");	
+			actionForm.attr("action", "/notice/get");	
+			actionForm.submit();
+		});	
+	});
 
-	
+
 
 </script>
 

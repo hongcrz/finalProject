@@ -2,6 +2,15 @@
 <%@ include file="../include/header.jsp" %>
 <body>
 <script type="text/javascript">
+/* 메뉴 상세 카테고리 관련 */
+$(document).ready(function() {
+	
+		 var list = $(".tab_button li").index();
+	     $("#defalt").addClass("on");
+
+	     $(".tab_content > li").hide(0);
+	     $(".tab_content > li").eq(0).fadeIn(300);
+	 });
 $(document).ready(function() {
 	   $(".tab_button li").click(function() {
 	     var list = $(this).index();
@@ -9,10 +18,18 @@ $(document).ready(function() {
 	     $(this).addClass("on");
 
 	     $(".tab_content > li").hide();
-	     $(".tab_content > li").eq(list).show();
+	     $(".tab_content > li").eq(list).fadeIn(300);
 	   });
 	 });
-	
+	 
+/* 메뉴리스트 팝업 관련  */
+  $(document).on('click', '.detail-more',function () {
+    $(this).next('.menu-detail-pop').fadeIn(300);
+  });
+  $(document).on('click', '.menu-detail-pop .close-btn',function () {
+    $(this).parents('.menu-detail-pop').fadeOut(300);
+  });
+
 	
 </script>
 
@@ -48,19 +65,24 @@ $(document).ready(function() {
 	 
     		</div>	 	
     	</div>
-    	<div class = "menu_content" style="background-color: #f2f2f2; overflow: hidden; padding-bottom: 120px;">
-    			<div style="padding: 2%; height: 100%;">
-    				<ul class = "tab_button">
-    					<li class="on">all</li>
+    	<div>
+    		<ul class = "tab_button" style="background-color: #009132;">
+    					<li id="defalt">All</li>
     					<li>클래식</li>
     					<li>프레쉬&라이트</li>
     					<li>프리미엄</li>
     					<li>추가 선택</li>
     				</ul>
+    	</div>
+    	<div class = "menu_content" style="background-color: #f2f2f2; overflow: hidden; padding-bottom: 120px;">
+    			<div style="padding: 2%; height: 100%;  ">
     				<ul class = "tab_content">
-    					<li>
-    						<ul class = "all">
-    							<li>
+    				
+    					<!-- 상세 카테고리 all  -->
+    					
+    					<li class="all">
+    						<ul>
+    							<li class="detail-more" onclick="location.href='javascript:;void(0);'" style="position: apsolute; z-index: 3;">
 		    						<div class="label_new">
 		    							<span>NEW</span>
 		    						</div>
@@ -70,338 +92,148 @@ $(document).ready(function() {
 		    						<strong class="tit">스파이시 쉬림프</strong>
 		    						<span class="eng">Spicy Shrimp</span>
 		    						<span class="cal">233 kcal</span>
-    							</li>
-    							<li>
+		    					</li>
+		    					<li class="menu-detail-pop" style="background-color:  rgba(255, 255, 255, 0.8);">
+		    						<div class ="close-btn" style="width: 100%; height: 100%;">
+		    							<div class = "info-box-top" style="padding: 15px; height: 60%;">
+		    								<div>
+			    								<div class="title-box"  style="height: 100px;">
+				    								<h4 style="font-weight: bold;">스파이시 쉬림프</h4>
+					    							<p style="width: 50%; float: left;">Spicy Shrimp</p>
+					    							<p style="width: 50%; float: left; color: #ffc300; font-weight: bold;">233 kcal</p>
+			    								</div> 
+			    								<div  style="height: 130px;">
+				    								<span style="display: block; height: 100px; color: black; font-weight: bold;">이국적인 매콤함이 더해진 시즌 한정 스파이시 쉬림프!</span>
+				    							</div>
+				    						</div>
+		    							</div>
+		    							<div class ="info-box-bottom" style="text-align: center; font-size: 0.5px; background-color: #d9d9d9; height: 40%; padding: 15px;">
+		    								<div>
+		    									<p style="font-size: 15px; display: block; height: 40px; padding: 10px; color: black;">15cm : 1,800원 / 30cm : 3,600원</	p>
+		    								</div>
+		    								<div style="padding: 15px;">
+				    							<p>* 매장에 따라 추천소스는 상이할 수 있습니다.</p>
+				    							<p>* 써브웨이가 제공하는 신선한 야채가 정량으로 제공됩니다.</p>
+				    							<p><br>* 제품 사진은 이미지컷입니다.<br></p>
+			    							</div>
+			    						</div>
+		    						</div>
+		    					</li>
+		    				</ul>
+    						<ul>
+    							<li class="detail-more" onclick="location.href='javascript:;void(0);'" style="position: apsolute; z-index: 3;">
 		    						<div class="label_new">
 		    							<span>NEW</span>
 		    						</div>
 		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_pm05.png">
+		    							<img src="/resources/image/Menu/sandwich/sandwich_pm04.png">
 		    						</div>
-		    						<strong class="tit">스파이시 쉬림프 아보카도</strong>
-		    						<span class="eng">Spicy Shrimp Avocado</span>
-		    						<span class="cal">289 kcal</span>
+		    						<strong class="tit">스파이시 쉬림프</strong>
+		    						<span class="eng">Spicy Shrimp</span>
+		    						<span class="cal">233 kcal</span>
 		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_pm10.png">
+		    					<li class="menu-detail-pop" style="background-color:  rgba(255, 255, 255, 0.8);">
+		    						<div class ="close-btn" style="width: 100%; height: 100%;">
+		    							<div class = "info-box-top" style="padding: 15px; height: 60%;">
+		    								<div>
+			    								<div class="title-box"  style="height: 100px;">
+				    								<h4 style="font-weight: bold;">스파이시 쉬림프</h4>
+					    							<p style="width: 50%; float: left;">Spicy Shrimp</p>
+					    							<p style="width: 50%; float: left; color: #ffc300; font-weight: bold;">233 kcal</p>
+			    								</div> 
+			    								<div  style="height: 130px;">
+				    								<span style="display: block; height: 100px; color: black; font-weight: bold;">이국적인 매콤함이 더해진 시즌 한정 스파이시 쉬림프!</span>
+				    							</div>
+				    						</div>
+		    							</div>
+		    							<div class ="info-box-bottom" style="text-align: center; font-size: 0.5px; background-color: #d9d9d9; height: 40%; padding: 15px;">
+		    								<div>
+		    									<p style="font-size: 15px; display: block; height: 40px; padding: 10px; color: black;">15cm : 1,800원 / 30cm : 3,600원</	p>
+		    								</div>
+		    								<div style="padding: 15px;">
+				    							<p>* 매장에 따라 추천소스는 상이할 수 있습니다.</p>
+				    							<p>* 써브웨이가 제공하는 신선한 야채가 정량으로 제공됩니다.</p>
+				    							<p><br>* 제품 사진은 이미지컷입니다.<br></p>
+			    							</div>
+			    						</div>
 		    						</div>
-		    						<strong class="tit">쉬림프</strong>
-		    						<span class="eng">Shrimp</span>
-		    						<span class="cal">229 kcal</span>
 		    					</li>
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_fl02.png">
-		    						</div>
-		    						<strong class="tit">로스트 치킨</strong>
-		    						<span class="eng">Roasted Chicken</span>
-		    						<span class="cal">320 kcal</span>
-		    					</li>
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_cl06.png">
-		    						</div>
-		    						<strong class="tit">에그마요</strong>
-		    						<span class="eng">Egg Mayo</span>
-		    						<span class="cal">480 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_pm03.png">
-		    						</div>
-		    						<strong class="tit">K-바비큐</strong>
-		    						<span class="eng">K-BBQ</span>
-		    						<span class="cal">372 kcal</span>
-		    					</li>
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_cl06.png">
-		    						</div>
-		    						<strong class="tit">로티세리 바비큐 치킨</strong>
-		    						<span class="eng">Rotisserie Barbecue Chicken</span>
-		    						<span class="cal">350 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_pm08.png">
-		    						</div>
-		    						<strong class="tit">풀드 포크 바비큐</strong>
-		    						<span class="eng">Pulled Pork Barbecue</span>
-		    						<span class="cal">327 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_pm08.png">
-		    						</div>
-		    						<strong class="tit">이탈리안 비엠티</strong>
-		    						<span class="eng">Italian B.M.T.™</span>
-		    						<span class="cal">410 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_cl02.png">
-		    						</div>
-		    						<strong class="tit">비엘티</strong>
-		    						<span class="eng">B.L.T.</span>
-		    						<span class="cal">380 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_cl03.png">
-		    						</div>
-		    						<strong class="tit">미트볼</strong>
-		    						<span class="eng">Meatball</span>
-		    						<span class="cal">480 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_cl04.png">
-		    						</div>
-		    						<strong class="tit">햄</strong>
-		    						<span class="eng">Ham</span>
-		    						<span class="cal">290 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_cl05.png">
-		    						</div>
-		    						<strong class="tit">참치</strong>
-		    						<span class="eng">Tuna</span>
-		    						<span class="cal">480 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_fl04.png">
-		    						</div>
-		    						<strong class="tit">써브웨이 클럽</strong>
-		    						<span class="eng">Subway Club™</span>
-		    						<span class="cal">293 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_fl05.png">
-		    						</div>
-		    						<strong class="tit">터키</strong>
-		    						<span class="eng">Turkey</span>
-		    						<span class="cal">280 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_cl06.png">
-		    						</div>
-		    						<strong class="tit">베지</strong>
-		    						<span class="eng">Veggie Delite</span>
-		    						<span class="cal">230 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_pm01.png">
-		    						</div>
-		    						<strong class="tit">스테이크 & 치즈</strong>
-		    						<span class="eng">Steak & Cheese</span>
-		    						<span class="cal">380 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_pm02.png">
-		    						</div>
-		    						<strong class="tit">터키 베이컨 아보카도</strong>
-		    						<span class="eng">Turkey Bacon Avocado</span>
-		    						<span class="cal">420 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_pm06.png">
-		    						</div>
-		    						<strong class="tit">스파이시 이탈리안</strong>
-		    						<span class="eng">Tuna</span>
-		    						<span class="cal">480 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_pm07.png">
-		    						</div>
-		    						<strong class="tit">치킨 데리야끼</strong>
-		    						<span class="eng">Tuna</span>
-		    						<span class="cal">370 kcal</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_01.png">
-		    						</div>
-		    						<strong class="tit">미트 추가</strong>
-		    						<span class="eng">MEAT</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_08.png">
-		    						</div>
-		    						<strong class="tit">쉬림프 더블업</strong>
-		    						<span class="eng">Shrimp Double Up</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_02.png">
-		    						</div>
-		    						<strong class="tit">에그마요</strong>
-		    						<span class="eng">Egg Mayo</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_03.png">
-		    						</div>
-		    						<strong class="tit">오믈렛</strong>
-		    						<span class="eng">Omelet</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_04.png">
-		    						</div>
-		    						<strong class="tit">아보카도</strong>
-		    						<span class="eng">Avocado</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_05.png">
-		    						</div>
-		    						<strong class="tit">베이컨</strong>
-		    						<span class="eng">Bacon</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/recipe_pepperoni.png">
-		    						</div>
-		    						<strong class="tit">페퍼로니</strong>
-		    						<span class="eng">Pepperoni</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/recipe_cheese.png">
-		    						</div>
-		    						<strong class="tit">치즈 추가</strong>
-		    						<span class="eng">Chesses</span>
-		    					</li>	
-    						</ul>
-    					</li>
+		    				</ul>
+						</li>
+						
+						
+						<!-- 상세 카테고리 클래식  -->
+						
 						<li>
 							<ul>
-								<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/sandwich/sandwich_cl06.png">
+    							<li class="detail-more" onclick="location.href='javascript:;void(0);'" style="position: apsolute; z-index: 3;">
+		    						<div class="label_new">
+		    							<span>NEW</span>
 		    						</div>
-		    						<strong class="tit">에그마요</strong>
-		    						<span class="eng">Egg Mayo</span>
-		    						<span class="cal">480 kcal</span>
+		    						<div class="img">
+		    							<img src="/resources/image/Menu/sandwich/sandwich_pm04.png">
+		    						</div>
+		    						<strong class="tit">스파이시 쉬림프</strong>
+		    						<span class="eng">Spicy Shrimp</span>
+		    						<span class="cal">233 kcal</span>
+		    						<div style="position: absolute; z-index: 5; top:171px; opacity: 0;">
+		    							<p>빨간맛에 빠진 쉬림프
+		    							<br>이국적인 매콤함이 더해진 시즌 한정 스파이시 쉬림프!
+		    							</p>
+		    						</div>
 		    					</li>
-							</ul>
+		    					<li class="menu-detail-pop" style="background-color:  rgba(255, 255, 255, 0.8);">
+		    						<div class ="close-btn" style="width: 100%; height: 100%;">
+		    							<div class = "info-box-top" style="padding: 15px; height: 60%;">
+		    								<div>
+			    								<div class="title-box"  style="height: 100px;">
+				    								<h4 style="font-weight: bold;">스파이시 쉬림프</h4>
+					    							<p style="width: 50%; float: left;">Spicy Shrimp</p>
+					    							<p style="width: 50%; float: left; color: #ffc300; font-weight: bold;">233 kcal</p>
+			    								</div> 
+			    								<div  style="height: 130px;">
+				    								<span style="display: block; height: 100px; color: black; font-weight: bold;">이국적인 매콤함이 더해진 시즌 한정 스파이시 쉬림프!</span>
+				    							</div>
+				    						</div>
+		    							</div>
+		    							<div class ="info-box-bottom" style="text-align: center; font-size: 0.5px; background-color: #d9d9d9; height: 40%; padding: 15px;">
+		    								<div>
+		    									<p style="font-size: 15px; display: block; height: 40px; padding: 10px; color: black;">15cm : 1,800원 / 30cm : 3,600원</	p>
+		    								</div>
+		    								<div style="padding: 15px;">
+				    							<p>* 매장에 따라 추천소스는 상이할 수 있습니다.</p>
+				    							<p>* 써브웨이가 제공하는 신선한 야채가 정량으로 제공됩니다.</p>
+				    							<p><br>* 제품 사진은 이미지컷입니다.<br></p>
+			    							</div>
+			    						</div>
+		    						</div>
+		    					</li>
+		    				</ul>
+		    				
 						</li>
+						
+						<!-- 상세 카테고리 프래쉬 & 라이트  -->
+						
 						<li>
-							<ul>
-							</ul>
+							
 						</li>
+						
+						<!-- 상세 카테고리 프리미엄  -->
+						
 						<li>
-							<ul>
-							</ul>
+							
 						</li>
+						
+						<!-- 상세 카테고리 추가 선택  -->
+						
 						<li>
-							<ul>
-								<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_01.png">
-		    						</div>
-		    						<strong class="tit">미트 추가</strong>
-		    						<span class="eng">MEAT</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_08.png">
-		    						</div>
-		    						<strong class="tit">쉬림프 더블업</strong>
-		    						<span class="eng">Shrimp Double Up</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_02.png">
-		    						</div>
-		    						<strong class="tit">에그마요</strong>
-		    						<span class="eng">Egg Mayo</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_03.png">
-		    						</div>
-		    						<strong class="tit">오믈렛</strong>
-		    						<span class="eng">Omelet</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_04.png">
-		    						</div>
-		    						<strong class="tit">아보카도</strong>
-		    						<span class="eng">Avocado</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/img_toppping_05.png">
-		    						</div>
-		    						<strong class="tit">베이컨</strong>
-		    						<span class="eng">Bacon</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/recipe_pepperoni.png">
-		    						</div>
-		    						<strong class="tit">페퍼로니</strong>
-		    						<span class="eng">Pepperoni</span>
-		    					</li>
-		    					
-		    					<li>
-		    						<div class="img">
-		    							<img src="/resources/image/Menu/topping/recipe_cheese.png">
-		    						</div>
-		    						<strong class="tit">치즈 추가</strong>
-		    						<span class="eng">Chesses</span>
-		    					</li>	
-							</ul>
+							
 						</li>
-
     				</ul>
     			</div>
     		</div>
-    	</div>
+    </div>
     	
-
-   
 </body>
 <%@ include file="../include/footer.jsp" %>
 

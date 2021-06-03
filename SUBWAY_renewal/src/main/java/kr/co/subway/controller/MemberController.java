@@ -1,10 +1,7 @@
 package kr.co.subway.controller;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +12,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.co.subway.security.domain.CustomUserDetails;
 import kr.co.subway.service.MemberService;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
@@ -48,7 +44,7 @@ public class MemberController {
 		service.register(user);
 		
 //		rttr.addFlashAttribute("result", user.getUserid());
-		return "redirect:/main";
+		return "redirect:/";
 	}
 	
 	@ResponseBody	// ajax	사용 

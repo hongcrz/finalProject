@@ -21,9 +21,8 @@ public class MemberServiceTests {
 	@Test
 	public void testRegister() {
 		CustomUserDetails user = new CustomUserDetails();
-		user.setUserid("customUser08");
+		user.setUserid("testUser2");
 		user.setUserpw("1234");
-		user.setUname("유저08");
 		
 		service.register(user);
 	}
